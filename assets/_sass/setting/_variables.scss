@@ -1,0 +1,237 @@
+// ---------------------------------------------
+//   design variables
+//----------------------------------------------
+
+//   design width
+//----------------------------------------------
+$design-width-pc: 1200;
+$design-width-sp: 750;
+
+//   min width
+//----------------------------------------------
+$minwidth-pc: 1000;
+$minwidth-sp: 320;
+
+//   breakpoints
+//----------------------------------------------
+$breakpoint-conf: (
+  breakpoint: (
+    pc: 'screen and (min-width:768px), print',
+    sp: 'screen and (max-width:767px), print',
+    not-pc: 'screen and (max-width:767px), print',
+    not-sp: 'screen and (min-width:768px), print',
+    XS: 'screen and (max-width:320px), print',
+    S: 'screen and (max-width:499px), print',
+    M: 'screen and (min-width:500px) and (max-width:1024px), print',
+    L: 'screen and (min-width:1025px) and (max-width:1920px), print',
+    XL: 'screen and (min-width:1921px), print',
+  ),
+);
+
+//   color
+//----------------------------------------------
+$black: #000;
+$white: #fff;
+
+//   line height
+//----------------------------------------------
+$line-height-pc: 1.5;
+$line-height-sp: 1.5;
+
+//   font
+//----------------------------------------------
+$root-fz-pc: 14;
+$root-fz-sp: 14;
+$root-fc: $white;
+$root-ff: 'Helvetica Neue LT', 'Helvetica Neue', 'Segoe UI', Helvetica, Verdana, Arial, 'A+EqpB-游ゴシック体 Pr6N M',
+  'Yu Gothic Medium', '游ゴシック Medium', '游ゴシック体', YuGothic, Yu Gothic, 'Hiragino Sans',
+  'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+
+//   z-index
+//----------------------------------------------
+$layer-header: 90;
+$layer-about: 99;
+$layer-player: 90;
+$layer-tutorial: 90;
+$layer-opening: 100;
+$layer-gdpr: 101;
+
+//   easing
+//----------------------------------------------
+//map-get($ease, linear)的な書き方で使えます
+//https://easings.net/ja
+$ease: ();
+$ease: map-merge(
+  $ease,
+  (
+    linear: cubic-bezier(0.25, 0.25, 0.75, 0.75),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    ease: cubic-bezier(0.25, 0.1, 0.25, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeIn: cubic-bezier(0.42, 0, 1, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeOut: cubic-bezier(0, 0, 0.58, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInOut: cubic-bezier(0.42, 0, 0.58, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInQuint: cubic-bezier(0.755, 0.05, 0.855, 0.06),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInSine: cubic-bezier(0.47, 0, 0.745, 0.715),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInExpo: cubic-bezier(0.95, 0.05, 0.795, 0.035),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInCirc: cubic-bezier(0.6, 0.04, 0.98, 0.335),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInBack: cubic-bezier(0.6, -0.28, 0.735, 0.045),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInOutSine: cubic-bezier(0.445, 0.05, 0.55, 0.95),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInOutExpo: cubic-bezier(1, 0, 0, 1),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86),
+  )
+);
+$ease: map-merge(
+  $ease,
+  (
+    easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55),
+  )
+);

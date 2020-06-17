@@ -1,0 +1,62 @@
+@mixin pc {
+  @media #{map-deep-get($breakpoint-conf, breakpoint, pc)} {
+    @content;
+  }
+}
+@mixin sp {
+  @media #{map-deep-get($breakpoint-conf, breakpoint, sp)} {
+    @content;
+  }
+}
+@mixin not-pc {
+  @media #{map-deep-get($breakpoint-conf, breakpoint, not-pc)} {
+    @content;
+  }
+}
+@mixin not-sp {
+  @media #{map-deep-get($breakpoint-conf, breakpoint, not-sp)} {
+    @content;
+  }
+}
+@mixin XS {
+  @media #{map-deep-get($breakpoint-conf, breakpoint, XS)} {
+    @content;
+  }
+}
+@mixin S {
+  @media #{map-deep-get($breakpoint-conf, breakpoint, S)} {
+    @content;
+  }
+}
+@mixin M {
+  @media #{map-deep-get($breakpoint-conf, breakpoint, M)} {
+    @content;
+  }
+}
+@mixin L {
+  @media #{map-deep-get($breakpoint-conf, breakpoint, L)} {
+    @content;
+  }
+}
+@mixin XL {
+  @media #{map-deep-get($breakpoint-conf, breakpoint, XL)} {
+    @content;
+  }
+}
+
+@mixin lineHeightCrop($line-height) {
+  &::before {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+    content: '';
+  }
+  &::after {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+    content: '';
+  }
+}

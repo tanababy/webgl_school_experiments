@@ -1,0 +1,85 @@
+/* ---------------------------------------------
+*   html, body
+--------------------------------------------- */
+html,
+body {
+  color: $root-fc;
+  font-size: $root-fz-pc * 1px;
+  font-family: $root-ff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  backface-visibility: hidden;
+}
+body {
+  line-height: $line-height-pc;
+  background-color: $black;
+  overscroll-behavior-y: none;
+
+  @include sp {
+    line-height: $line-height-sp;
+  }
+}
+// * {
+//   backface-visibility: inherit;
+// }
+// html {
+//   backface-visibility: hidden;
+// }
+
+/* ---------------------------------------------
+*   transition animation
+--------------------------------------------- */
+.LOCATION-enter {
+  opacity: 0;
+}
+.LOCATION-enter-active {
+  transition: opacity 300ms;
+
+  @include S {
+    transition: opacity 1000ms;
+  }
+}
+
+.no-trans-enter {
+  opacity: 0;
+}
+.no-trans-active {
+  transition: none;
+}
+
+/* ---------------------------------------------
+*   <a> tag
+--------------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------------------------------------------
+*   <img> tag
+--------------------------------------------- */
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  vertical-align: bottom;
+}
+img[src$='.svg'] {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------------------------------------------
+*   responsive style
+--------------------------------------------- */
+@include not-pc {
+  .sp-hide {
+    display: none !important;
+  }
+}
+@include not-sp {
+  .pc-hide {
+    display: none !important;
+  }
+}
