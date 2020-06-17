@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{168:function(n,o,r){"use strict";r.r(o),r.d(o,"frag",(function(){return c}));var c="\n  precision mediump float;\n  // データ型が変数名が頂点シェーダと一致する必要がある点に注意！ @@@\n  varying vec4 vColor;\n\n  void main(){\n      // gl_FragColor が、最終的に画面に出力される色（vec4）\n      gl_FragColor = vColor;\n  }\n"}}]);
